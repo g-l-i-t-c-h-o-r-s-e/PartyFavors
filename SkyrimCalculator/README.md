@@ -1,0 +1,1 @@
+Just something I threw together to calculate how long in human minutes/hours my ex played skyrim; based on how many skyrim hours/years she played.
