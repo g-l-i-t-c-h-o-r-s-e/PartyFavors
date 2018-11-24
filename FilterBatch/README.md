@@ -1,0 +1,1 @@
+Apply video and audio filters in intervals with specific durations, via .txt array files.
