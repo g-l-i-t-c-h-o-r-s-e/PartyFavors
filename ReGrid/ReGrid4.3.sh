@@ -96,7 +96,7 @@ if [[ ${6} =~ ("-u"|"-d"|"-l"|"-r") ]]; then
 pre="nullsrc=d=0$Var1:s=$5,lutrgb=0[null]; \\
 [0:v]scale=$5,setsar=1/1[v];[null][v]concat[in1];[in1]scale='$3',setsar=1/1,split=outputs="
 echo "#./ReGrid4.3.sh $1 $2 $3 $4 $5 $6" >> 1.meme
-echo "FFMPREG -ss 00:00:00 -i '$4' -lavfi \\
+echo "ffmpeg -ss 00:00:00 -i '$4' -lavfi \\
 \"$pre"$1""$Outputs"; "  >> 1.meme
  cat 2.meme >> 1.meme
 echo "$Outputs""vstack=inputs=$1[a];[a]split=outputs="$1"$Outputs2; "\\ >> 1.meme
@@ -105,7 +105,7 @@ echo "$Outputs""vstack=inputs=$1[a];[a]split=outputs="$1"$Outputs2; "\\ >> 1.mem
 echo "aevalsrc=0:d=0$Var2[silence];[silence][0:a]concat=v=0:a=1[c]; \\
 [b]trim=start=0$Var2:duration=0[out];[c]atrim=start=0$Var2:duration=0[out2]\" \\
 -map \"[out]\" -map \"[out2]\" -f nut -c:v mjpeg -c:a pcm_u8 -q:v 0 -s $5  testme.nut" >> 1.meme
-echo "FFPLEY -i testme.nut -af volume=0.05" >> 1.meme
+echo "ffplay -i testme.nut -af volume=0.05" >> 1.meme
  mv 1.meme ReGrid.sh
  chmod +x ReGrid.sh
  rm 2.meme
@@ -114,7 +114,7 @@ rm 3.meme
 else
 
 echo "#./ReGrid4.3.sh $1 $2 $3 $4 $5 $6" >> 1.meme
-echo "FFMPREG -ss 00:00:00 -i '$4' -lavfi \\
+echo "ffmpeg -ss 00:00:00 -i '$4' -lavfi \\
 \"$pre"$1""$Outputs"; "  >> 1.meme
  cat 2.meme >> 1.meme
 echo "$Outputs""vstack=inputs=$1[a];[a]split=outputs="$1"$Outputs2; "\\ >> 1.meme
@@ -123,7 +123,7 @@ echo "$Outputs""vstack=inputs=$1[a];[a]split=outputs="$1"$Outputs2; "\\ >> 1.mem
 echo "aevalsrc=0:d=0$Var2[silence];[silence][0:a]concat=v=0:a=1[c]; \\
 [b]trim=start=0$Var2:duration=0[out];[c]atrim=start=0$Var2:duration=0[out2]\" \\
 -map \"[out]\" -map \"[out2]\" -f nut -c:v mjpeg -c:a pcm_u8 -q:v 0 -s $5  testme.nut" >> 1.meme
-echo "FFPLEY -i testme.nut -af volume=0.05" >> 1.meme
+echo "ffplay -i testme.nut -af volume=0.05" >> 1.meme
 
  if [[ ${7} =~ ("-f"|"-flyeye") ]]; then
   file=$(cat 1.meme)
