@@ -1,0 +1,3 @@
+A batch ImageMagick format databending script I made a long time ago. It also experiments with what I believe to be an colorspace glitch too.
+
+If I remember right it only really works when you use .tiff as the container when sending the files into imagemagick, converting into whatever format, databending, and converting back to tiff before sending the files back to FFMpeg (I think I explained that right). If anyone can explain what I found I would appreciate it lol.
