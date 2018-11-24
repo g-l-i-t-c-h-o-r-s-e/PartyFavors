@@ -1,7 +1,6 @@
 if [[ $1 =~ ("-help"|"-h") ]];then
 echo "
 ./palettefy.sh red blue red blue 2x2
-./palettefy.sh two red blue 2x2
 ./palettefy.sh green blue purple black 10x10
 ./palettefy.sh yellow black red blue 2x2
 ./palettefy.sh -two blue red 10x10
